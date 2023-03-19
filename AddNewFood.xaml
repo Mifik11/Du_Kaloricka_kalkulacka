@@ -1,0 +1,103 @@
+﻿<Window x:Class="Kaloricka_kalkulacka.AddNewFood"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kaloricka_kalkulacka"
+        mc:Ignorable="d"
+        Title="AddNewFood" Height="350" Width="350">
+    <Grid Margin="5" Background="{StaticResource CorporateDarkBlue}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Název jídla*"
+               HorizontalAlignment="Center"
+               Margin="0,0"
+               Grid.Row="0"
+               FontSize="11"
+                Foreground="{StaticResource CorporateWhite}"/>
+        <Label Content="Bílkoviny*"
+               HorizontalAlignment="Center"
+               FontSize="11"
+               Grid.Row="0"
+               Grid.Column="1"
+                Foreground="{StaticResource CorporateWhite}"/>
+        <Label Content="Sacharidy*"
+               HorizontalAlignment="Center"
+               FontSize="11"
+               Grid.Row="2"
+               Grid.Column="1"
+                Foreground="{StaticResource CorporateWhite}"/>
+        <Label Content="Tuky*"
+               HorizontalAlignment="Center"
+               FontSize="11"
+               Grid.Row="4"
+               Grid.Column="1"
+                Foreground="{StaticResource CorporateWhite}"/>
+        <Label Content="Cukry*"
+               HorizontalAlignment="Center"
+               FontSize="11"
+               Grid.Row="6"
+               Grid.Column="1"
+                Foreground="{StaticResource CorporateWhite}"/>
+        <Label Grid.Row="6"
+               Content="Zkontrolujte data!"
+               HorizontalContentAlignment="Center"
+               Foreground="Red"
+               x:Name="lbError"
+               Visibility="Hidden"/>
+
+        <TextBox Grid.Row="1"
+                 Margin="10"
+                 x:Name="tbNewFood"
+                 Text= "{Binding food, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="tbNewFood_LostFocus"
+                  Background="{StaticResource CorporateBlue}"
+                         Foreground="{StaticResource CorporateWhite}"/>
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Margin="10"
+                 x:Name="tbNewProtein"
+                 Text= "{Binding proteinnw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="tbNewProtein_LostFocus" PreviewTextInput="tbNewProtein_PreviewTextInput" 
+                  Background="{StaticResource CorporateBlue}"
+                         Foreground="{StaticResource CorporateWhite}"/>
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 Margin="10"
+                 x:Name="tbNewCarbohydrates"
+                 Text= "{Binding carbohydratesnw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="tbNewCarbohydrates_LostFocus" PreviewTextInput="tbNewCarbohydrates_PreviewTextInput"
+                  Background="{StaticResource CorporateBlue}"
+                         Foreground="{StaticResource CorporateWhite}"/>
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="10"
+                 x:Name="tbNewSugar"
+                 Text= "{Binding fatnw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="tbNewFat_LostFocus" PreviewTextInput="tbNewSugar_PreviewTextInput"
+                  Background="{StaticResource CorporateBlue}"
+                         Foreground="{StaticResource CorporateWhite}"/>
+        <TextBox Grid.Row="7"
+                 Grid.Column="1"
+                 Margin="10"
+                 x:Name="tbNewFat"
+                 Text= "{Binding sugarnw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" LostFocus="tbNewSugar_LostFocus" PreviewTextInput="tbNewFat_PreviewTextInput"  
+                  Background="{StaticResource CorporateBlue}"
+                         Foreground="{StaticResource CorporateWhite}"/>
+        <Button Grid.Column="0" 
+                Grid.Row="6" 
+                Grid.RowSpan="3"
+                Margin="30"
+                Content="Uložit" Click="Button_Click"
+                Style="{StaticResource CorporateButton}"/>
+    </Grid>
+</Window>

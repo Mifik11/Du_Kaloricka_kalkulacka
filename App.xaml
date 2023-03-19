@@ -1,0 +1,19 @@
+﻿<Application x:Class="Kaloricka_kalkulacka.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Kaloricka_kalkulacka"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Brush x:Key="CorporateBlue">#004980</Brush>
+            <Brush x:Key="CorporateWhite">#e4eaff</Brush>
+            <Brush x:Key="CorporateDarkBlue">#00335a</Brush>
+            <Brush x:Key="CorporateGreen">#008000</Brush>
+            <Brush x:Key="CorporateLightBlue">#c9d5ff</Brush>
+            <Style x:Key="CorporateButton" TargetType="Button">
+                <Setter Property="Background" Value="#00335a" />
+                <Setter Property="Foreground" Value="#e4eaff" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
