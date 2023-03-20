@@ -73,6 +73,14 @@ namespace Kaloricka_kalkulacka
             {
                 string[] time = File.ReadAllLines($"Data/time.txt");
                 lbRow.Content = time[1];
+                if (Convert.ToInt32(time[1]) >= 10)
+                {
+                    lbRow.Foreground = (Brush)FindResource("CorporateRed");
+                }
+                else
+                {
+                    lbRow.Foreground = (Brush)FindResource("CorporateWhite");
+                }
             }
         
             calculating = new Calculating();
@@ -97,18 +105,21 @@ namespace Kaloricka_kalkulacka
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            string[] lines = File.ReadAllLines($"Data/food.txt");
-            string[] food_name = new string[lines.Length];
-            for (int i = 0; i < lines.Length; i++)
+            if (File.Exists($"Data/food.txt"))
             {
-                string[] spread = lines[i].Split(' ');
-                food_name[i] = spread[0];
-            }
-            cb.Items.Clear();
-            for (int i = 0; i < food_name.Length; i++)
-            {
-                cb.Items.Add(food_name[i]);
-            }
+                string[] lines = File.ReadAllLines($"Data/food.txt");
+                string[] food_name = new string[lines.Length];
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] spread = lines[i].Split(' ');
+                    food_name[i] = spread[0];
+                }
+                cb.Items.Clear();
+                for (int i = 0; i < food_name.Length; i++)
+                {
+                    cb.Items.Add(food_name[i]);
+                }
+            }            
         }
         public double protein = 0;
         public double carbohydrates = 0;
@@ -200,6 +211,14 @@ namespace Kaloricka_kalkulacka
                                 string[] xtime = new string[] { dt.ToString("MM.dd.yyyy"), day };
                                 File.WriteAllLines($"Data/time.txt", xtime);
                                 lbRow.Content = day;
+                                if (Convert.ToInt32(day) >= 10)
+                                {
+                                    lbRow.Foreground = (Brush)FindResource("CorporateRed");
+                                }
+                                else
+                                {
+                                    lbRow.Foreground = (Brush)FindResource("CorporateWhite");
+                                }
                             }
                         }
                         else
