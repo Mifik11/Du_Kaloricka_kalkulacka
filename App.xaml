@@ -9,6 +9,7 @@
             <Brush x:Key="CorporateWhite">#e4eaff</Brush>
             <Brush x:Key="CorporateDarkBlue">#00335a</Brush>
             <Brush x:Key="CorporateGreen">#008000</Brush>
+            <Brush x:Key="CorporateRed">#800000</Brush>
             <Brush x:Key="CorporateLightBlue">#c9d5ff</Brush>
             <Style x:Key="CorporateButton" TargetType="Button">
                 <Setter Property="Background" Value="#00335a" />
