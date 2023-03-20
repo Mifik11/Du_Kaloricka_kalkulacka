@@ -72,6 +72,10 @@ namespace Kaloricka_kalkulacka
             if (File.Exists($"Data/time.txt"))
             {
                 string[] time = File.ReadAllLines($"Data/time.txt");
+                if (time[1]>= 10)
+                {
+                    lbRow.ForeGround = Brushes.Red;
+                }
                 lbRow.Content = time[1];
             }
         
